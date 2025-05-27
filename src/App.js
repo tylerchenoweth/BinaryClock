@@ -1,7 +1,6 @@
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import './App.css'
-import Unit from './components/Unit/Unit.js'
 import TimeColumn from './components/TimeColumn/TimeColumn.js'
 import {getBinary} from './utils/getBinary.js'
 

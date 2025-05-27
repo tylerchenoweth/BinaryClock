@@ -3,9 +3,6 @@ import styles from './TimeColumn.module.css'
 import Unit from '../../components/Unit/Unit.js'
 
 function TimeColumn({numUnits, binary}) {
-
-    const circlesToMake = numUnits;
-
     return (
         <div className={styles.timeColumn}>
             
