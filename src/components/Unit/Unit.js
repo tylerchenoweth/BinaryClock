@@ -6,7 +6,7 @@ function Unit({isOn}) {
     let on = "#c26ad5";
     let off = "#5e3567";
 
-    if(isOn == "1") {
+    if(isOn === "1") {
         color = on;
     } else {
         color = off;
