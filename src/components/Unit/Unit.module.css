@@ -1,0 +1,20 @@
+.unit {
+  border-radius: 50%;
+  /* border: 1px solid green; */
+  background-color:blue;
+
+  height: 5rem;
+  width: 5rem;
+
+  margin: 1rem auto;
+}
+
+
+@media(max-width: 768px) {
+  .unit {
+    height: 3rem;
+    width: 3rem;
+
+    margin: .5rem auto;
+  }
+}

@@ -1,0 +1,15 @@
+.timeColumn {
+    /* width: 8rem; */
+    /* width: auto; */
+    padding: .5rem;
+    justify-content: center;
+    /* background-color: orange; */
+    /* border: 1px solid orange; */
+}
+
+@media(max-width: 768px){
+    .timeColumn {
+        width:3.5rem;
+        padding: 0;
+    }
+}

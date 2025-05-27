@@ -1,48 +1,70 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
-// function CanvasDrawing() {
-//   const canvasRef = useRef(null);
+import './App.css'
+import Unit from './components/Unit/Unit.js'
+import TimeColumn from './components/TimeColumn/TimeColumn.js'
+import {getBinary} from './utils/getBinary.js'
 
-//   useEffect(() => {
-//     const canvas = canvasRef.current;
-//     const ctx = canvas.getContext("2d");
-
-//     // Circle
-//     ctx.beginPath();
-//     ctx.arc(200, 100, 40, 0, 2 * Math.PI);
-//     ctx.fillStyle = "red";
-//     ctx.fill();
-
-//     // // 🔲 Rectangle
-//     // ctx.fillStyle = "blue";
-//     // ctx.fillRect(50, 50, 100, 80);
-
-    
-
-//     // // Triangle
-//     // ctx.beginPath();
-//     // ctx.moveTo(100, 200);
-//     // ctx.lineTo(150, 300);
-//     // ctx.lineTo(50, 300);
-//     // ctx.closePath();
-//     // ctx.fillStyle = "green";
-//     // ctx.fill();
-
-//     // // Line
-//     // ctx.beginPath();
-//     // ctx.moveTo(20, 20);
-//     // ctx.lineTo(200, 20);
-//     // ctx.strokeStyle = "black";
-//     // ctx.lineWidth = 2;
-//     // ctx.stroke();
-//   }, []);
 
 function App() {
+  const [time, setTime] = useState(new Date());
+  const binary_time = getBinary(time);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   return (
-    <div>
+    <div className="App">
+
+      {/* 
+        If you uncomment below remember to adjust the css
+        Instructions are in the App.css
+      */}
+
+      {/* <h1>My binary clock</h1>
       
+      <div>
+        {time.toLocaleTimeString('en-US', {
+          timeZone: 'America/New_York',
+        })}
+      </div>
+
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br> */}
+
+      <div className="clock-outer-container">
+        <div className="clock-inner-container">
+          {/* Hour tens */}
+          <TimeColumn key="hour_tens" numUnits={2} binary={binary_time.get("hour_tens")} />
+          {/* Hour units */}
+          <TimeColumn key="hour_units" numUnits={4} binary={binary_time.get("hour_units")} />
+        </div>
+
+        <div className="clock-inner-container">
+          {/* Minute tens */}
+          <TimeColumn key="minute_tens" numUnits={3} binary={binary_time.get("minute_tens")} />
+          {/* Minute units */}
+          <TimeColumn key="minute_units" numUnits={4} binary={binary_time.get("minute_units")} />
+        </div>
+
+        <div className="clock-inner-container">
+          {/* Second tens */}
+          <TimeColumn key="second_tens" numUnits={3} binary={binary_time.get("second_tens")} />
+          {/* Second units */}
+          <TimeColumn key="second_units" numUnits={4} binary={binary_time.get("second_units")} />
+        </div>
+      </div>
     </div>
   );
 }
+
 
 export default App;

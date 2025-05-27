@@ -4,20 +4,29 @@
 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.clock-outer-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  /* align-items: flex-end; */
+  /* Uncomment above if you want the titles and actual time on the screen*/
+  /* The css below will vertically center the clock */
+  align-items: center;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.clock-inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0 2rem;
+}
+
+
+@media(max-width: 768px) {
+  .clock-inner-container {
+    margin: 0 .5rem;
   }
 }
-
-.timeColumn {
-  border: 5px solid white;
-  width: 20%;
-}
-
-

@@ -46,6 +46,20 @@ console.log(second, " ", map.get("second_units"));
 
 
 
+let tmp = map.get("second_units");
+
+let diff = 4-tmp.length;
+let diff_str = "";
+
+for(let i=0; i<diff; i++) {
+    diff_str += "0";
+}
+
+diff_str += tmp;
+
+
+
+console.log(diff_str);
 
 
 
