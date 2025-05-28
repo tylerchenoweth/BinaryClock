@@ -18,12 +18,15 @@ export function getBinary(date_time) {
 
     // Mod 12 to convert from military time
     let hour = date_time.toLocaleString('en-US', {
-        timeZone: "America/New_York",
         hour: 'numeric',
         hour12: false,
     }) % 12;
     let minute = date_time.getMinutes();
     let second = date_time.getSeconds();
+
+    if(hour === 0) {
+        hour = 12;
+    }
 
     const map = new Map();
 
