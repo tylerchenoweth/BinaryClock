@@ -18,3 +18,13 @@
     margin: .5rem auto;
   }
 }
+
+
+@media(max-height: 768px) {
+  .unit {
+    height: 3rem;
+    width: 3rem;
+
+    margin: .5rem auto;
+  }
+}
