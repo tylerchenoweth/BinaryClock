@@ -20,7 +20,7 @@
 }
 
 
-@media(max-height: 768px) {
+@media(max-height: 468px) {
   .unit {
     height: 3rem;
     width: 3rem;
